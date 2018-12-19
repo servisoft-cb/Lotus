@@ -1,0 +1,407 @@
+Versão 1.286.109
+FB
+
+CREATE TABLE NFE_EMAIL (
+    ID     INTEGER NOT NULL,
+    NOME   VARCHAR(60),
+    EMAIL  VARCHAR(200)
+);
+
+ALTER TABLE NFE_EMAIL ADD CONSTRAINT PK_NFE_EMAIL PRIMARY KEY (ID);
+
+
+CREATE TABLE NOTAFISCAL_NFE (
+    FILIAL        INTEGER NOT NULL,
+    NUMSEQ        INTEGER NOT NULL,
+    ITEM          INTEGER NOT NULL,
+    TIPO          VARCHAR(3),
+    ITEMTIPO      INTEGER,
+    DESCRICAO     VARCHAR(70),
+    MOTIVO        BLOB SUB_TYPE 1 SEGMENT SIZE 10,
+    NFEPROTOCOLO  VARCHAR(45),
+    NFERECIBO     VARCHAR(45),
+    DATAHORAAUT   TIMESTAMP,
+    XML           BLOB SUB_TYPE 1 SEGMENT SIZE 10,
+    DTCADASTRO    DATE,
+    HRCADASTRO    TIME
+);
+
+ALTER TABLE NOTAFISCAL_NFE ADD CONSTRAINT PK_NOTAFISCAL_NFE PRIMARY KEY (FILIAL, NUMSEQ, ITEM);
+
+COMMENT ON COLUMN NOTAFISCAL_NFE.TIPO IS 
+'TIPO = CCE Carta Correção';
+
+
+
+CREATE TABLE COR (
+    CODIGO   INTEGER NOT NULL,
+    NOME     VARCHAR(15),
+    PANTONE  VARCHAR(15)
+);
+
+
+ALTER TABLE COR ADD CONSTRAINT PK_COR PRIMARY KEY (CODIGO);
+
+
+Paradox
+Alter Table dbUsuario ADD NFeEmail Boolean
+Alter Table dbUsuarioIns ADD NFeEmail Boolean
+Alter Table dbUsuarioAlt ADD NFeEmail Boolean
+Alter Table dbUsuarioExc ADD NFeEmail Boolean
+Alter Table dbCliente ADD EmailNFe2 VarChar(150)
+Alter Table dbCPagar ADD DtEmissaoNota Date
+Alter Table dbCPagarParc ADD DtEmissaoNota Date
+
+
+
+Versão 1.289.116
+Alter Table dbParametros ADD SenhaMaterial VarChar(10)
+Alter Table dbParametros ADD ConfirmarMatComErro Boolean
+Alter Table dbMaterial ADD Correto Boolean
+
+
+
+
+Versão 1.289.116
+FB
+CREATE TABLE TALAOGRADE (
+    LOTE      INTEGER NOT NULL,
+    ITEM      INTEGER NOT NULL,
+    TALAO     INTEGER NOT NULL,
+    CODGRADE  INTEGER,
+    POSICAO   INTEGER,
+    QTDPAR    INTEGER
+);
+
+/******************************************************************************/
+/*                                Primary Keys                                */
+/******************************************************************************/
+
+ALTER TABLE TALAOGRADE ADD CONSTRAINT PK_TALAOGRADE PRIMARY KEY (LOTE, ITEM, TALAO);
+
+
+Versão 1.307.118
+
+Alter Table dbFilial add Perc_Trib_NTS_Ind Float,
+    add Perc_Trib_NTS_Ven Float,
+    add Perc_Trib_NTS_Ind_Exp Float,
+    add Perc_Trib_NTS_Ven_Exp Float
+	
+Alter Table dbNotaFiscalItens add Perc_Tributo Float,
+       add Vlr_Tributo Float
+	   
+Alter Table dbNotaFiscal add Vlr_Tributo Float
+
+Alter Table dbNatOperacao add Gerar_Tributo VarChar(1),
+       add Tipo_Ind_Ven VarChar(1)
+	   
+Alter Table dbContas add Age_PossuiDigVerificador Boolean
+	   
+UPDATE dbNatOperacao SET TIPO_IND_VEN = 'V'
+WHERE (CodNatOper = '7102')
+  or (CodNatOper = '7103')
+  or (CodNatOper = '7104')
+  or (CodNatOper = '7105')
+  or (CodNatOper = '7106')
+  or (CodNatOper = '7107')
+  or (CodNatOper = '7108')
+  or (CodNatOper = '7109')
+  or (CodNatOper = '7110')
+  or (CodNatOper = '7111')
+  or (CodNatOper = '7112')
+  or (CodNatOper = '7113')
+  or (CodNatOper = '7114')
+  or (CodNatOper = '7115')
+  or (CodNatOper = '7116')
+  or (CodNatOper = '7117')
+  or (CodNatOper = '7118')
+  or (CodNatOper = '7119')
+  or (CodNatOper = '7120')
+  or (CodNatOper = '7121')
+  or (CodNatOper = '7122')
+  or (CodNatOper = '7123')
+  or (CodNatOper = '7401')
+  or (CodNatOper = '7402')
+  or (CodNatOper = '7403')
+  or (CodNatOper = '7405')
+
+UPDATE dbNatOperacao SET TIPO_IND_VEN = 'I'
+WHERE
+   (CodNatOper = '7101')
+  or (CodNatOper = '7101')
+  or (CodNatOper = '7124')
+  or (CodNatOper = '7125')
+
+UPDATE dbNatOperacao SET GERAR_TRIBUTO = 'S'
+WHERE (CodNatOper = '7102')
+  or (CodNatOper = '7103')
+  or (CodNatOper = '7104')
+  or (CodNatOper = '7105')
+  or (CodNatOper = '7106')
+  or (CodNatOper = '7107')
+  or (CodNatOper = '7108')
+  or (CodNatOper = '7109')
+  or (CodNatOper = '7110')
+  or (CodNatOper = '7111')
+  or (CodNatOper = '7112')
+  or (CodNatOper = '7113')
+  or (CodNatOper = '7114')
+  or (CodNatOper = '7115')
+  or (CodNatOper = '7116')
+  or (CodNatOper = '7117')
+  or (CodNatOper = '7118')
+  or (CodNatOper = '7119')
+  or (CodNatOper = '7120')
+  or (CodNatOper = '7121')
+  or (CodNatOper = '7122')
+  or (CodNatOper = '7123')
+  or (CodNatOper = '7401')
+  or (CodNatOper = '7402')
+  or (CodNatOper = '7403')
+  or (CodNatOper = '7405')
+  OR (CodNatOper = '7101')
+  or (CodNatOper = '7101')
+  or (CodNatOper = '7124')
+  or (CodNatOper = '7125')
+
+  UPDATE dbNatOperacao SET TIPO_IND_VEN = 'I'
+WHERE
+   (CodNatOper = '5101')
+  or (CodNatOper = '6101')
+  or (CodNatOper = '5124')
+  or (CodNatOper = '5125')
+  or (CodNatOper = '6124')
+  or (CodNatOper = '6125')
+
+UPDATE dbNatOperacao SET TIPO_IND_VEN = 'V'
+WHERE (CodNatOper = '5102')
+  or (CodNatOper = '5103')
+  or (CodNatOper = '5104')
+  or (CodNatOper = '5105')
+  or (CodNatOper = '5106')
+  or (CodNatOper = '5107')
+  or (CodNatOper = '5108')
+  or (CodNatOper = '5109')
+  or (CodNatOper = '5110')
+  or (CodNatOper = '5111')
+  or (CodNatOper = '5112')
+  or (CodNatOper = '5113')
+  or (CodNatOper = '5114')
+  or (CodNatOper = '5115')
+  or (CodNatOper = '5116')
+  or (CodNatOper = '5117')
+  or (CodNatOper = '5118')
+  or (CodNatOper = '5119')
+  or (CodNatOper = '5120')
+  or (CodNatOper = '5121')
+  or (CodNatOper = '5122')
+  or (CodNatOper = '5123')
+  or (CodNatOper = '5401')
+  or (CodNatOper = '5402')
+  or (CodNatOper = '5403')
+  or (CodNatOper = '5405')
+  or (CodNatOper = '6101')
+  or (CodNatOper = '6102')
+  or (CodNatOper = '6103')
+  or (CodNatOper = '6104')
+  or (CodNatOper = '6105')
+  or (CodNatOper = '6106')
+  or (CodNatOper = '6107')
+  or (CodNatOper = '6108')
+  or (CodNatOper = '6109')
+  or (CodNatOper = '6110')
+  or (CodNatOper = '6111')
+  or (CodNatOper = '6112')
+  or (CodNatOper = '6113')
+  or (CodNatOper = '6114')
+  or (CodNatOper = '6115')
+  or (CodNatOper = '6116')
+  or (CodNatOper = '6117')
+  or (CodNatOper = '6118')
+  or (CodNatOper = '6119')
+  or (CodNatOper = '6120')
+  or (CodNatOper = '6121')
+  or (CodNatOper = '6122')
+  or (CodNatOper = '6123')
+  or (CodNatOper = '6401')
+  or (CodNatOper = '6402')
+  or (CodNatOper = '6403')
+  or (CodNatOper = '6405')
+
+UPDATE dbNatOperacao SET GERAR_TRIBUTO = 'S'
+WHERE (CodNatOper = '5101')
+  or (CodNatOper = '5102')
+  or (CodNatOper = '5103')
+  or (CodNatOper = '5104')
+  or (CodNatOper = '5105')
+  or (CodNatOper = '5106')
+  or (CodNatOper = '5107')
+  or (CodNatOper = '5108')
+  or (CodNatOper = '5109')
+  or (CodNatOper = '5110')
+  or (CodNatOper = '5111')
+  or (CodNatOper = '5112')
+  or (CodNatOper = '5113')
+  or (CodNatOper = '5114')
+  or (CodNatOper = '5115')
+  or (CodNatOper = '5116')
+  or (CodNatOper = '5117')
+  or (CodNatOper = '5118')
+  or (CodNatOper = '5119')
+  or (CodNatOper = '5120')
+  or (CodNatOper = '5121')
+  or (CodNatOper = '5122')
+  or (CodNatOper = '5123')
+  or (CodNatOper = '5124')
+  or (CodNatOper = '5125')
+  or (CodNatOper = '5401')
+  or (CodNatOper = '5402')
+  or (CodNatOper = '5403')
+  or (CodNatOper = '5405')
+  or (CodNatOper = '6101')
+  or (CodNatOper = '6102')
+  or (CodNatOper = '6103')
+  or (CodNatOper = '6104')
+  or (CodNatOper = '6105')
+  or (CodNatOper = '6106')
+  or (CodNatOper = '6107')
+  or (CodNatOper = '6108')
+  or (CodNatOper = '6109')
+  or (CodNatOper = '6110')
+  or (CodNatOper = '6111')
+  or (CodNatOper = '6112')
+  or (CodNatOper = '6113')
+  or (CodNatOper = '6114')
+  or (CodNatOper = '6115')
+  or (CodNatOper = '6116')
+  or (CodNatOper = '6117')
+  or (CodNatOper = '6118')
+  or (CodNatOper = '6119')
+  or (CodNatOper = '6120')
+  or (CodNatOper = '6121')
+  or (CodNatOper = '6122')
+  or (CodNatOper = '6123')
+  or (CodNatOper = '6124')
+  or (CodNatOper = '6125')
+  or (CodNatOper = '6401')
+  or (CodNatOper = '6402')
+  or (CodNatOper = '6403')
+  or (CodNatOper = '6405')
+  
+Versão 1.335.118
+
+Paradox
+dbMaterial
+ NOMESEMACENTO A 60
+
+FB
+ALTER TABLE MATERIAL
+    ADD NOMESEMACENTO VARCHAR(60);
+	
+Rodar o Sobre
+Rodar o Gera FB dos materiais
+	
+
+
+
+Versão 1.344.121
+================
+FB:
+===
+ALTER TABLE TAB_IBPT
+    ADD PERC_ESTADUAL DOUBLE PRECISION,
+    ADD PERC_MUNICIPAL DOUBLE PRECISION,
+    ADD DT_INICIO DATE,
+    ADD DT_FINAL DATE,
+    ADD CHAVE VARCHAR(20),
+    ADD VERSAO VARCHAR(15),
+    ADD FONTE VARCHAR(30);
+	
+	
+ALTER TABLE TAB_IBPT ADD CONSTRAINT PK_TAB_IBPT PRIMARY KEY (ID);
+
+
+COMMENT ON COLUMN TAB_IBPT.TABELA IS 
+'0=NCM
+1=NBS';
+
+
+
+CREATE TABLE TAB_IBPT (
+    ID               INTEGER NOT NULL,
+    CODIGO           VARCHAR(10),
+    EX               VARCHAR(2),
+    TABELA           VARCHAR(1),
+    NOME             VARCHAR(250),
+    PERC_NACIONAL    DOUBLE PRECISION,
+    PERC_IMPORTACAO  DOUBLE PRECISION,
+    PERC_ESTADUAL    DOUBLE PRECISION,
+    PERC_MUNICIPAL   DOUBLE PRECISION,
+    DT_INICIO        DATE,
+    DT_FINAL         DATE,
+    CHAVE            VARCHAR(20),
+    VERSAO           VARCHAR(15),
+    FONTE            VARCHAR(30)
+);
+
+	
+	
+ALTER TABLE CLIENTE
+    ADD TIPO_CONSUMIDOR INTEGER;
+
+
+Paradox:
+========
+Alterar o campo Perc_Tributo para PERC_TRIBUTO_FEDERAL na tabela dbNOTAFISCALITENS
+
+ALTER TABLE dbNotaFiscal
+	 ADD VLR_TRIBUTOS_ESTADUAL Float,
+	 ADD VLR_TRIBUTOS_MUNICIPAL Float
+
+ALTER TABLE dbNOTAFISCALITENS
+	 ADD PERC_TRIBUTO_ESTADUAL Float,
+	 ADD PERC_TRIBUTO_MUNICIPAL Float,
+	 ADD VLR_TRIBUTOS_ESTADUAL Float,
+	 ADD VLR_TRIBUTOS_MUNICIPAL Float
+	 
+	 
+ALTER TABLE dbNOTAFISCALITENS
+    ADD VERSAO_TRIBUTO VARCHAR(15),
+    ADD FONTE_TRIBUTO VARCHAR(30)
+
+ALTER TABLE dbNOTAFISCAL
+    ADD FONTE_TRIBUTOS VARCHAR(30),
+    ADD VERSAO_TRIBUTOS VARCHAR(15)
+	
+ALTER TABLE dbNOTAFISCALITENS
+	 ADD VLR_TRIBUTOS_FEDERAL Float,
+     ADD PERC_TRIBUTO_FEDERAL Float
+
+ALTER TABLE dbNOTAFISCAL
+	 ADD VLR_TRIBUTOS_FEDERAL Float
+
+ALTER TABLE dbPARAMETROS
+	 ADD IMP_TIPO_TRIBUTOS_ITENS VarCHAR(1)
+	
+ALTER TABLE DBPARAMETROS
+    ADD IMP_TIPO_TRIBUTOS VarCHAR(1)
+
+ALTER TABLE dbPARAMETROS
+	 ADD IMP_PERC_TRIB_DADOS_ADIC VarCHAR(1)
+
+ALTER TABLE dbPARAMETROS
+    ADD IMP_PERC_TRIB_ITENS VarCHAR(1),
+    ADD Lei_Transp_Calcular VarCHAR(1)
+
+ALTER TABLE dbcliente
+    ADD Tipo_Consumidor Integer
+
+ALTER TABLE dbNOTAFISCAL
+	 ADD Tipo_Consumidor Integer	
+	
+
+ALTER TABLE dbPARAMETROS
+    ADD Tipo_Arredondamento VarCHAR(1)
+	
+		
+	

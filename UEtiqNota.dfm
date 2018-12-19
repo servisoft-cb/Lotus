@@ -1,0 +1,259 @@
+object fEtiqNota: TfEtiqNota
+  Left = 324
+  Top = 206
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsSingle
+  Caption = 'Etiquetas p/ Caixas'
+  ClientHeight = 149
+  ClientWidth = 407
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 407
+    Height = 149
+    Align = alClient
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 9
+      Top = 67
+      Width = 70
+      Height = 13
+      Alignment = taRightJustify
+      Caption = 'Qtd. Etiquetas:'
+    end
+    object Panel5: TPanel
+      Left = 1
+      Top = 107
+      Width = 405
+      Height = 41
+      Align = alBottom
+      TabOrder = 2
+      object BitBtn1: TBitBtn
+        Left = 61
+        Top = 8
+        Width = 90
+        Height = 25
+        Hint = 'Imprime a sele'#231#227'o acima'
+        Caption = '&Imprimir'
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 0
+        OnClick = BitBtn1Click
+        Glyph.Data = {
+          0E030000424D0E030000000000003600000028000000110000000E0000000100
+          180000000000D802000000000000000000000000000000000000BFBFBFBFBFBF
+          BFBFBF0000000000000000000000000000000000000000000000000000000000
+          00000000BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBF000000BFBFBFBFBFBFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000BFBFBF000000BFBFBFBFBF
+          BF00BFBFBF000000000000000000000000000000000000000000000000000000
+          000000000000000000000000BFBFBF000000BFBFBF00BFBFBF000000BFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBF00FFFF00FFFF00FFFFBFBFBFBFBFBF000000
+          000000000000BFBFBF00BFBFBF000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+          BFBF7F7F7F7F7F7F7F7F7FBFBFBFBFBFBF000000BFBFBF000000BFBFBF00BFBF
+          BF00000000000000000000000000000000000000000000000000000000000000
+          0000000000000000BFBFBFBFBFBF00000000BFBFBF000000BFBFBFBFBFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000BFBFBF000000BF
+          BFBF00000000BFBFBFBFBFBF0000000000000000000000000000000000000000
+          00000000000000000000BFBFBF000000BFBFBF00000000000000BFBFBFBFBFBF
+          BFBFBF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+          00BFBFBF000000BFBFBF00000000BFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFF
+          000000000000000000000000000000FFFFFF000000000000000000000000BFBF
+          BF00BFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFF000000BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBFBFBFBFBF
+          BFBFBFBFBF000000FFFFFF000000000000000000000000000000FFFFFF000000
+          BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000BFBFBFBFBFBF00BFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF00000000000000000000000000000000
+          0000000000000000000000BFBFBFBFBFBF00}
+      end
+      object BitBtn3: TBitBtn
+        Left = 242
+        Top = 8
+        Width = 90
+        Height = 25
+        Hint = 'Fecha a janela atual'
+        Caption = '&Fechar'
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 2
+        OnClick = BitBtn3Click
+        Glyph.Data = {
+          F6000000424DF600000000000000760000002800000010000000100000000100
+          04000000000080000000CE0E0000D80E00001000000000000000000000000000
+          80000080000000808000800000008000800080800000C0C0C000808080000000
+          FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF0038383838380E
+          038383838383830E603800000000380E660033333330830E660333333330000E
+          660333330030330E660333330E00330E660300000EE0330E06030EEEEEE6030E
+          660300000E60330E660333330600330E660333330030330E6603333333303330
+          E6033333333033330E0333333330000000033333333333333333}
+      end
+      object BitBtn2: TBitBtn
+        Left = 153
+        Top = 8
+        Width = 90
+        Height = 25
+        Hint = 'Imprime a sele'#231#227'o acima'
+        Caption = 'Visualizar'
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 1
+        OnClick = BitBtn2Click
+        Glyph.Data = {
+          0E030000424D0E030000000000003600000028000000110000000E0000000100
+          180000000000D802000000000000000000000000000000000000BFBFBFBFBFBF
+          BFBFBF0000000000000000000000000000000000000000000000000000000000
+          00000000BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBF000000BFBFBFBFBFBFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000BFBFBF000000BFBFBFBFBF
+          BF00BFBFBF000000000000000000000000000000000000000000000000000000
+          000000000000000000000000BFBFBF000000BFBFBF00BFBFBF000000BFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBF00FFFF00FFFF00FFFFBFBFBFBFBFBF000000
+          000000000000BFBFBF00BFBFBF000000BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF
+          BFBF7F7F7F7F7F7F7F7F7FBFBFBFBFBFBF000000BFBFBF000000BFBFBF00BFBF
+          BF00000000000000000000000000000000000000000000000000000000000000
+          0000000000000000BFBFBFBFBFBF00000000BFBFBF000000BFBFBFBFBFBFBFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000BFBFBF000000BF
+          BFBF00000000BFBFBFBFBFBF0000000000000000000000000000000000000000
+          00000000000000000000BFBFBF000000BFBFBF00000000000000BFBFBFBFBFBF
+          BFBFBF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF0000
+          00BFBFBF000000BFBFBF00000000BFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFF
+          000000000000000000000000000000FFFFFF000000000000000000000000BFBF
+          BF00BFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFF000000BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBFBFBFBFBF
+          BFBFBFBFBF000000FFFFFF000000000000000000000000000000FFFFFF000000
+          BFBFBFBFBFBFBFBFBF00BFBFBFBFBFBFBFBFBFBFBFBFBFBFBF000000FFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF000000BFBFBFBFBFBF00BFBF
+          BFBFBFBFBFBFBFBFBFBFBFBFBFBFBFBF00000000000000000000000000000000
+          0000000000000000000000BFBFBFBFBFBF00}
+      end
+    end
+    object Panel2: TPanel
+      Left = 1
+      Top = 1
+      Width = 405
+      Height = 57
+      Align = alTop
+      TabOrder = 0
+      OnExit = Panel2Exit
+      object Label5: TLabel
+        Left = 52
+        Top = 16
+        Width = 27
+        Height = 13
+        Alignment = taRightJustify
+        Caption = 'S'#233'rie:'
+      end
+      object Label1: TLabel
+        Left = 38
+        Top = 40
+        Width = 41
+        Height = 13
+        Alignment = taRightJustify
+        Caption = 'N'#186' Nota:'
+      end
+      object Edit1: TEdit
+        Left = 82
+        Top = 8
+        Width = 84
+        Height = 21
+        CharCase = ecUpperCase
+        TabOrder = 0
+        Text = '1'
+      end
+      object CurrencyEdit1: TCurrencyEdit
+        Left = 82
+        Top = 32
+        Width = 84
+        Height = 21
+        AutoSize = False
+        DecimalPlaces = 0
+        DisplayFormat = '0'
+        TabOrder = 1
+      end
+    end
+    object CurrencyEdit2: TCurrencyEdit
+      Left = 82
+      Top = 59
+      Width = 84
+      Height = 21
+      AutoSize = False
+      DecimalPlaces = 0
+      DisplayFormat = '0'
+      TabOrder = 1
+    end
+  end
+  object msEtiqueta: TDataSource
+    DataSet = mEtiqueta
+    Left = 304
+    Top = 64
+  end
+  object qNota: TQuery
+    DatabaseName = 'Tabelas'
+    SQL.Strings = (
+      'SELECT Serie, NumNota, Qtd'
+      'FROM dbNotaFiscal.db'
+      'where Serie = :Serie'
+      '  And NumNota = :NumNota')
+    Left = 224
+    Top = 40
+    ParamData = <
+      item
+        DataType = ftString
+        Name = 'Serie'
+        ParamType = ptUnknown
+      end
+      item
+        DataType = ftInteger
+        Name = 'NumNota'
+        ParamType = ptUnknown
+      end>
+    object qNotaSerie: TStringField
+      FieldName = 'Serie'
+      Size = 3
+    end
+    object qNotaNumNota: TIntegerField
+      FieldName = 'NumNota'
+    end
+    object qNotaQtd: TIntegerField
+      FieldName = 'Qtd'
+    end
+  end
+  object mEtiqueta: TClientDataSet
+    Active = True
+    Aggregates = <>
+    IndexFieldNames = 'NumEtiqueta'
+    Params = <>
+    Left = 272
+    Top = 64
+    Data = {
+      690000009619E0BD0100000018000000040000000000030000006900074E756D
+      4E6F746104000100000000000553657269650100490000000100055749445448
+      0200020003000B4E756D4574697175657461040001000000000008517464546F
+      74616C04000100000000000000}
+    object mEtiquetaNumNota: TIntegerField
+      FieldName = 'NumNota'
+    end
+    object mEtiquetaSerie: TStringField
+      FieldName = 'Serie'
+      Size = 3
+    end
+    object mEtiquetaNumEtiqueta: TIntegerField
+      FieldName = 'NumEtiqueta'
+    end
+    object mEtiquetaQtdTotal: TIntegerField
+      FieldName = 'QtdTotal'
+    end
+  end
+end

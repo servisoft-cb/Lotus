@@ -1,0 +1,253 @@
+object fProdutosVendidosR: TfProdutosVendidosR
+  Left = 68
+  Top = 164
+  Width = 840
+  Height = 563
+  Caption = 'fProdutosVendidosR'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object RLReport1: TRLReport
+    Left = 8
+    Top = 8
+    Width = 794
+    Height = 1123
+    DataSource = DM2.dsqProdutosVendidos
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Style = []
+    Margins.LeftMargin = 5.000000000000000000
+    Margins.TopMargin = 5.000000000000000000
+    Margins.RightMargin = 5.000000000000000000
+    object RLSubDetail1: TRLSubDetail
+      Left = 19
+      Top = 93
+      Width = 756
+      Height = 64
+      DataSource = DM2.dsqProdutosVendidos
+      object RLBand1: TRLBand
+        Left = 0
+        Top = 0
+        Width = 756
+        Height = 16
+        object RLDBText1: TRLDBText
+          Left = 0
+          Top = 0
+          Width = 62
+          Height = 14
+          DataField = 'DTEMISSAO'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText2: TRLDBText
+          Left = 72
+          Top = 0
+          Width = 44
+          Height = 14
+          AutoSize = False
+          DataField = 'NUMNOTA'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText3: TRLDBText
+          Left = 114
+          Top = 0
+          Width = 31
+          Height = 14
+          DataField = 'SERIE'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText4: TRLDBText
+          Left = 213
+          Top = 0
+          Width = 268
+          Height = 14
+          AutoSize = False
+          DataField = 'DESCRICAO'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText5: TRLDBText
+          Left = 720
+          Top = 0
+          Width = 35
+          Height = 14
+          Alignment = taRightJustify
+          AutoSize = False
+          DataField = 'QTD'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText6: TRLDBText
+          Left = 148
+          Top = 0
+          Width = 63
+          Height = 14
+          AutoSize = False
+          DataField = 'REFERENCIA'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+        object RLDBText7: TRLDBText
+          Left = 483
+          Top = 0
+          Width = 235
+          Height = 14
+          AutoSize = False
+          DataField = 'NOME'
+          DataSource = DM2.dsqProdutosVendidos
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -11
+          Font.Name = 'Arial'
+          Font.Style = []
+          ParentFont = False
+        end
+      end
+    end
+    object RLBand2: TRLBand
+      Left = 19
+      Top = 19
+      Width = 756
+      Height = 74
+      Borders.Sides = sdCustom
+      Borders.DrawLeft = False
+      Borders.DrawTop = False
+      Borders.DrawRight = False
+      Borders.DrawBottom = True
+      BeforePrint = RLBand2BeforePrint
+      object RLLabel1: TRLLabel
+        Left = 266
+        Top = 1
+        Width = 184
+        Height = 16
+        Alignment = taCenter
+        Caption = 'Notas Emitidas com o Material'
+      end
+      object RLLabel2: TRLLabel
+        Left = 253
+        Top = 17
+        Width = 213
+        Height = 16
+        Caption = 'Per'#237'odo de 99/99/9999 a 99/99/9999'
+      end
+      object RLLabel3: TRLLabel
+        Left = 0
+        Top = 56
+        Width = 71
+        Height = 15
+        Caption = 'Dt. Emiss'#227'o'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel4: TRLLabel
+        Left = 73
+        Top = 56
+        Width = 29
+        Height = 15
+        Caption = 'Nota'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel5: TRLLabel
+        Left = 115
+        Top = 56
+        Width = 32
+        Height = 15
+        Caption = 'S'#233'rie'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel6: TRLLabel
+        Left = 149
+        Top = 56
+        Width = 46
+        Height = 15
+        Caption = 'Material'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel7: TRLLabel
+        Left = 729
+        Top = 56
+        Width = 25
+        Height = 15
+        Caption = 'Qtd.'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+      object RLLabel8: TRLLabel
+        Left = 482
+        Top = 57
+        Width = 42
+        Height = 15
+        Caption = 'Cliente'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -12
+        Font.Name = 'Arial'
+        Font.Style = []
+        ParentFont = False
+      end
+    end
+  end
+end
